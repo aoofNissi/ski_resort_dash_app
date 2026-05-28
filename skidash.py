@@ -27,6 +27,7 @@ fields=resorts.select_dtypes(include=np.number).columns.tolist()
 countriesbycontinents = resorts.groupby("Continent")["Country"].unique().apply(list).to_dict()
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 pio.templates.default = "plotly"
 
@@ -151,4 +152,4 @@ def draw_skii_attribute_bar_chart(country, field):
 
 
 if __name__ == "__main__":
-    app.run(port = 8071,  debug = True)
+    app.run(debug = True)
