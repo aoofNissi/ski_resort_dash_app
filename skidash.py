@@ -12,7 +12,8 @@ import plotly.io as pio
 from os import sys
 
 resorts = (
-    pd.read_csv("../Data/Ski Resorts/resorts.csv", encoding = "ISO-8859-1")
+    # pd.read_csv("../Data/Ski Resorts/resorts.csv", encoding = "ISO-8859-1")
+    pd.read_csv("resorts.csv", encoding = "ISO-8859-1")
     # .query("Country in ['United States', 'Canada']")
     .assign(
         country_elevation_rank = lambda x: x.groupby("Country", as_index=False)["Highest point"].rank(ascending=False),
